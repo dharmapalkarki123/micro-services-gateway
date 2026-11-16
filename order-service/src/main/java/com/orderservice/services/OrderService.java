@@ -34,7 +34,7 @@ public class OrderService {
 
         //rest Api call
 
-        Payment paymentResponse= restTemplate.postForObject("http://localhost:9191/payment/doPayment", payment, Payment.class);
+        Payment paymentResponse= restTemplate.postForObject("http://Payment-Service/payment/doPayment", payment, Payment.class);
 
       message= paymentResponse.getPaymentStatus().equals("success")?"payment processing is sucessful":"Something went wrong";
          repository.save(order);

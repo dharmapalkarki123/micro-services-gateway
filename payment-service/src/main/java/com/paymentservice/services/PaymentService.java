@@ -31,4 +31,8 @@ public class PaymentService {
         return new Random().nextBoolean()?"success":"false";
      }
 
+     public Payment getOrderId(Integer orderId){
+         return paymentRepository.findByOrderId(orderId);
+     }
+
 }
