@@ -8,14 +8,16 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/rollback")
 public class FallBackController {
+
+
     @PostMapping("/orderFallback")
-    public Mono<String> OrderFallBack(){
-        return Mono.just("Order Operation is faield");
+    public String orderFallBack() {
+        return "Order Operation has failed. Please try again later.";
     }
 
-    @PostMapping("/paymentFallBack")
-    public Mono<String> paymentFallBack(){
-        return Mono.just("Payment Operation is faield");
+    @PostMapping("/paymentFallback")
+    public String paymentFallBack() {
+        return "Payment Operation has failed. Please try again later.";
     }
 
 }
