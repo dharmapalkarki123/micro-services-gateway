@@ -3,6 +3,8 @@ server:
 spring:
   application:
     name: CLOUD-GATEWAY
+  config:
+    import: optional:configserver:http://localhost:9196
 
   cloud:
     gateway:
@@ -32,8 +34,3 @@ spring:
                     fallbackUri: forward:/rollback/paymentFallback
                     statusCodes:
                       - 500
-
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
